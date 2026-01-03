@@ -1,3 +1,7 @@
 .venv
 my-env
-roms/*.rom
+roms/**/*
+dist/*
+
+!roms/*.md
+!dist/*.md
