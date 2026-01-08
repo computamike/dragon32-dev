@@ -16,6 +16,8 @@
     "--volume",
     "/tmp/.X11-unix:/tmp/.X11-unix",
     "--volume",
+    "/mnt/wslg/runtime-dir/pulse:/mnt/wslg/runtime-dir/pulse",
+    "--volume",
     "${localWorkspaceFolder}/roms:/home/dev/roms",
     "--volume",
     "${localWorkspaceFolder}/xroar.conf:/home/dev/.xroar/xroar.conf"
@@ -42,12 +44,8 @@
     }
   },
   "mounts": [
-    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/dev/.ssh,type=bind,readonly",
-    "source=${localEnv:SSH_AUTH_SOCK},target=/tmp/ssh-auth-sock,type=bind"
+    "source=${localEnv:HOME}/.ssh,target=/home/dev/.ssh,type=bind,readonly"
   ],
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/tmp/ssh-auth-sock"
-  },
   "remoteUser": "dev",
   "overrideCommand": true,
   "init": true
